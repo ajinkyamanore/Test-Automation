@@ -33,8 +33,8 @@ public class TestScript {
 		Refer_friend.click();
 		Thread.sleep(2000);
 
-		WebElement txt_Search = driver.findElement(By.id("quick-search"));
-		txt_Search.sendKeys("Entry");
+//		WebElement txt_Search = driver.findElement(By.id("quick-search"));
+//		txt_Search.sendKeys("Entry");
 		
 //		 WebElement location_filter = driver.findElement(By.xpath("//*[@id=\"quick-location\"]")); 
 //		 Select oSelect = new Select(location_filter); 
@@ -48,12 +48,12 @@ public class TestScript {
 		btn_Search.click();
 		Thread.sleep(2000);
 
-		WebElement Apply = driver.findElement(By.xpath("//*[@id=\"block-dvue-content\"]/article/div/div/div/div/div/section/div[1]/div/ul/li/div[2]/div[2]/a"));
+		WebElement Apply = driver.findElement(By.xpath("//*[@id=\"block-dvue-content\"]/article/div/div/div/div/div/section/div[1]/div/ul/li/div[2]/div[3]/a"));
 		Apply.click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		WebElement Refer_btn = driver.findElement(By.xpath("//*[@id=\"block-dvue-content\"]/div/div/div/div/div[1]/div[2]/div[1]/a"));
-		Refer_btn.click();
+//		WebElement Refer_btn = driver.findElement(By.xpath("//*[@id=\"block-dvue-content\"]/div/div/div/div/div[1]/div[2]/div[1]/a"));
+//		Refer_btn.click();
 
 		WebElement Salutation = driver.findElement(By.xpath("//*[@id=\"edit-salutation\"]"));
 		Select sSelect = new Select(Salutation);
@@ -83,13 +83,25 @@ public class TestScript {
 
 		WebElement txt_aadharNo = driver.findElement(By.id("edit-aadhar-no"));
 		txt_aadharNo.sendKeys("1234987634567789");
+		
+		WebElement Known_period = driver.findElement(By.id("edit-ext-known-referral"));
+		Select kSelect = new Select(Known_period);
+		kSelect.selectByVisibleText("1-3 years");
+		
+		WebElement Relationship_nature = driver.findElement(By.id("edit-ext-relation-ship-referral"));
+		Select rSelect = new Select(Relationship_nature);
+		rSelect.selectByVisibleText("Friend");
 
 //		WebElement btn_Save = driver.findElement(By.xpath("//*[@id=\"block-dvue-content\"]/div/div/div/form/div[4]/button[2]"));
 //		btn_Save.click();
 //		Thread.sleep(2000);
-
-		WebElement head_address = driver.findElement(By.xpath("//*[@id=\"myTab\"]/li[2]/a"));
-		head_address.click();
+		
+		WebElement btn_continue = driver.findElement(By.xpath("//*[@id=\"block-dvue-content\"]/div/div/div/form/div[3]/button[2]"));
+		btn_continue.click();
+		Thread.sleep(2000);
+		
+//		WebElement head_address = driver.findElement(By.xpath("//*[@id=\"myTab\"]/li[2]/a"));
+//		head_address.click();
 
 		WebElement address_type = driver.findElement(By.id("edit-address-type-id"));
 		Select aSelect = new Select(address_type);
@@ -106,17 +118,48 @@ public class TestScript {
 		cSelect.selectByVisibleText("Navi Mumbai");
 
 		WebElement state = driver.findElement(By.id("edit-state-id"));
-		Select kSelect = new Select(state);
-		kSelect.selectByVisibleText("Maharashtra");
+		Select mSelect = new Select(state);
+		mSelect.selectByVisibleText("Maharashtra");
 
-		WebElement country = driver.findElement(By.id("edit-state-id"));
+		WebElement country = driver.findElement(By.id("edit-country-id"));
 		Select dSelect = new Select(country);
 		dSelect.selectByVisibleText("INDIA");
 		
-		WebElement head_education = driver.findElement(By.xpath("//*[@id=\"myTab\"]/li[3]/a"));
-		head_education.click();
+//		WebElement head_education = driver.findElement(By.xpath("//*[@id=\"myTab\"]/li[3]/a"));
+//		head_education.click();
 		
+		WebElement btn_continue_addr = driver.findElement(By.xpath("//*[@id=\"block-dvue-content\"]/div/div/div/form/div[3]/button[2]"));
+		btn_continue_addr.click();
+		Thread.sleep(2000);
 		
+		WebElement high_qual = driver.findElement(By.id("edit-edu-id"));
+		Select hqSelect = new Select(high_qual);
+		hqSelect.selectByVisibleText("BCOM");
+		
+		WebElement institute_name = driver.findElement(By.id("edit-institute-id"));
+		Select inSelect = new Select(institute_name);
+		inSelect.selectByVisibleText("ABC Institute");
+		
+		WebElement btn_continue_edu = driver.findElement(By.xpath("//*[@id=\"block-dvue-content\"]/div/div/div/form/div[3]/button[2]"));
+		btn_continue_edu.click();
+		Thread.sleep(2000);
+		
+		WebElement radiobtn_exp = driver.findElement(By.xpath("//*[@id=\"tab-tab-4\"]/div[2]/div/div/div/div/div[1]/label/span"));
+		radiobtn_exp.click();
+		
+		WebElement emp_status = driver.findElement(By.id("edit-current-emp-status"));
+		Select esSelect = new Select(emp_status);
+		esSelect.selectByVisibleText("Present");
+		
+		WebElement txt_empName = driver.findElement(By.id("edit-employer"));
+		txt_empName.sendKeys("Cognizant");
+		
+		WebElement btn_continue_exp = driver.findElement(By.xpath("//*[@id=\"block-dvue-content\"]/div/div/div/form/div[3]/button[2]"));
+		btn_continue_exp.click();
+		Thread.sleep(2000);
+		
+		WebElement chckbox_agree = driver.findElement(By.id("edit-agree"));
+		chckbox_agree.click();
 		
 		
 
